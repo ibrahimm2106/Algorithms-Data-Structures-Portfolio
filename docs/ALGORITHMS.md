@@ -37,7 +37,7 @@ graph LR
     F -->|5| A
 ```
 
-Starting at `A`, the program computes:
+Starting at `A`, the executable portfolio implementation computes:
 
 | Destination | Distance | Shortest path |
 |---|---:|---|
@@ -47,5 +47,7 @@ Starting at `A`, the program computes:
 | D | 7 | A → B → D |
 | E | 8 | A → B → E |
 | F | 12 | A → C → F |
+
+> **Source transparency:** the original Coursework 2 report contains an internal inconsistency around node `F`: its step diagram/priority queue shows `12`, while one written results section states `13`. Using the adjacency list documented in the report, `A → C → F` has cost `3 + 9 = 12`, so the executable portfolio version uses `12` and tests that result.
 
 The implementation uses Python's `heapq`, giving efficient priority-queue operations.
